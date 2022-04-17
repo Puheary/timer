@@ -2,10 +2,45 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
   </head>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <!-- <h1><%= title %></h1> -->
+    <!-- <p>Welcome to <%= title %></p> -->
+    <input type="button" value="start" id="start" style="width: 30%; height: 30%;">
+    <input type="button" value="end" id="end" style="width: 30%; height: 30%;">
+
   </body>
+  <script>
+
+    $(document).ready(function(){
+      const myAudio = new Audio(); 
+      myAudio.src = "/mp3/beep.MP3"
+
+      $('#start').on('click', ()=>{
+        console.log('click');
+        // myAudio.loop=true
+        // setInterval
+        interval
+        // myAudio.play();
+      })
+
+      var interval = setInterval(function() {
+        // console.log("await..")
+        myAudio.play();
+      }, 1000)
+
+      $('#end').on('click', ()=>{
+        clearInterval(interval)
+        // myAudio.loop = false
+        // myAudio.pause();
+        // myAudio.currentTime = 0;
+        
+      })
+
+    })
+
+
+  </script>
 </html>
